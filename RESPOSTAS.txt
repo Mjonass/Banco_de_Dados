@@ -1,0 +1,4 @@
+Na tabela de funcionarios precisa fazer as seguintes alteraçoes:
+Coluna cpf de VARCHAR(11) para VARCHAR(14) e Coluna salário de DECIMAL(6,2) para DECIMAL(7,2)
+algumas alteraçoes feita em sala de aula foram para criação de PKs e FKs, não precisaram ser adicionados ou modificados
+Adicionados INSERTS da tabela cliente_pet
