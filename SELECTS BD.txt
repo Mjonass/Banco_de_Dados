@@ -1,0 +1,33 @@
+########## Lista de clientes ##########
+SELECT * FROM clientes
+
+########## Lista de produto ##########
+SELECT * FROM produto_venda
+
+######### Qual o produto mais caro ###########
+SELECT nome, tipo,valor FROM produto
+ORDER BY valor desc
+
+########## Quantas compras cada cliente realizou ##########
+SELECT nome, count(v.id_cliente) as quantidade FROM cliente as c
+INNET JOIN venda as v
+ON v.id_cliente = c.id
+GROUP BY c.nome
+ORDER BY quantidade
+
+########### Quais clientes fizeram mais de 5 compras ###############
+SELECT nome,count(v.id_cliente) as quantidade FROM cliente AS c
+INNER JOIN venda AS v
+ON v.id_cliente = c.id
+WHERE  quantidade > 5
+ORDER BY c.nome
+
+########## Qual o produto mais vendido ##########
+SELECT p.nome as nome_produto, count(pd.id_produto) as qnt_vendas FROM produto_venda as pd
+INNET JOIN produto as p
+ON pd.id_produto = p.id
+GROUP by p.nome
+ORDER BY qnt_vendas desc
+
+
+
